@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "335877363219",
+    "project_id": "e-comarceapp",
+    "storage_bucket": "e-comarceapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335877363219:android:08a0560b64811e8b9751e6",
+        "android_client_info": {
+          "package_name": "com.example.ecomarceapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335877363219-k2mbae6jckbhrn08duo8dh8oqg9p9rf4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ecomarceapp",
+            "certificate_hash": "4061aa1e9fdbf0f195fb2821c0046cf8f9c63c9e"
+          }
+        },
+        {
+          "client_id": "335877363219-rf18e3hjv9ul0fvmmp7ktdlo6ha4nkep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwt1TUjqmQTHjkJTjryFe_a9bfZ8br33Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335877363219-rf18e3hjv9ul0fvmmp7ktdlo6ha4nkep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
