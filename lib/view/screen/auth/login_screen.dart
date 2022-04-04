@@ -222,7 +222,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 context: context);
                             if (user != null) {
                               print("aaa");
-                              //Get.offNamed(Routes.mainScreen,arguments: [user.uid]);
+                              Get.offNamed(Routes.mainScreen,arguments: [user.uid]);
                             }
                           }
                         }else{

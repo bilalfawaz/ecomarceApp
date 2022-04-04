@@ -1,4 +1,5 @@
 import 'package:ecomarceapp/utils/route/route.dart';
+import 'package:ecomarceapp/utils/themes.dart';
 import 'package:ecomarceapp/view/screen/main_page.dart';
 import 'package:ecomarceapp/view/screen/welcome_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -26,6 +27,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemesApp.light,
+      darkTheme: ThemesApp.dark,
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.welcomeScreen,
       getPages: AppRoutes.routes,
