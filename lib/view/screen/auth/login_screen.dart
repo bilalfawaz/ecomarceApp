@@ -80,12 +80,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ? AuthTextFromField(
                                     hintText: "UserName",
                                     suffixIcon: const Text(""),
-                                    prefixIcon: Get.isDarkMode
-                                        ? Image.asset("assets/images/user.png")
-                                        : const Icon(
-                                            Icons.person,
-                                            color: pinkClr,
-                                          ),
+                                    prefixIcon: !Get.isDarkMode
+                                        ? const Icon(
+                                      Icons.person,
+                                      color: pinkClr,
+                                    ):Image.asset("assets/images/user.png"),
+
                                     controller:  args[0]=="2"?nameController:nameControllerLogin,
                                     validator: (value) {
                                       if(value == "" ){
@@ -101,12 +101,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             AuthTextFromField(
                                 hintText: "Email",
                                 suffixIcon: const Text(""),
-                                prefixIcon: Get.isDarkMode
-                                    ? Image.asset("assets/images/email.png")
-                                    : const Icon(
-                                        Icons.email,
-                                        color: pinkClr,
-                                      ),
+                                prefixIcon: !Get.isDarkMode
+                                    ? const Icon(
+                                  Icons.email,
+                                  color: pinkClr,
+                                ):Image.asset("assets/images/email.png"),
                                 controller: args[0]=="2"?emailController : emailControllerLogin,
                                 validator: (value) {
                                   if(value == "" || !RegExp(validationEmail).hasMatch(value)){
@@ -122,12 +121,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               hintText: "PassWord",
                               suffixIcon: const Text(""),
-                              prefixIcon: Get.isDarkMode
-                                  ? Image.asset("assets/images/lock.png")
-                                  : const Icon(
-                                      Icons.lock,
-                                      color: pinkClr,
-                                    ),
+                              prefixIcon: !Get.isDarkMode
+                                  ?const Icon(
+                                Icons.lock,
+                                color: pinkClr,
+                              ): Image.asset("assets/images/lock.png"),
+
                               controller:  args[0]=="2"?passController:passControllerLogin,
                               validator: (value) {
                                 if(value == "" || value.toString().length<6){
@@ -164,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: args[0] == "2"
                                 ? 'Already have an account? '
                                 : "Don't have account? ",
-                            color: Colors.white,
+                            color:!Get.isDarkMode?  Colors.white : Colors.black,
                             underLine: TextDecoration.none),
                         TextButton(
                           onPressed: (){
@@ -183,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child:  TextUtils( fontSize: 16,
                               fontWeight: FontWeight.normal,
                               text: args[0] == "2" ? "Log In" : "SignUp",
-                              color: Colors.white,
+                              color: !Get.isDarkMode?  Colors.white : Colors.black,
                               underLine: TextDecoration.underline),
                         ),
                       ],

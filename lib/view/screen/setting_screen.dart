@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/logic/controller/theme_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,9 +13,7 @@ class SettingScreen extends StatelessWidget {
       body: Center(
         child: TextButton(
             onPressed: () {
-              Get.isDarkMode ?
-              Get.changeThemeMode(ThemeMode.light):
-              Get.changeThemeMode(ThemeMode.dark);
+             ThemeController().changesTheme();
             },
             child: const Text("Change Mode Colors"))
       ),
