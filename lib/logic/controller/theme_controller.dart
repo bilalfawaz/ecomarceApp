@@ -1,29 +1,25 @@
-import 'package:ecomarceapp/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
-class ThemeController{
+class ThemeController {
+  final GetStorage boxStorage = GetStorage();
+  final key = 'isDarkModes';
 
-  final GetStorage getStorage = GetStorage();
-  final key = 'theme';
-
-  saveTheme(value){
-    getStorage.write(key, value);
+  saveThemeDataInBox(bool isDark) {
+    boxStorage.write(key, isDark);
   }
 
-  bool getTheme(){
-    return getStorage.read<bool>(key) ?? false;
+  bool getThemeDataFromBox() {
+    return boxStorage.read<bool>(key) ?? false;
   }
 
-  ThemeMode get themeDataGet => getTheme() ? ThemeMode.light : ThemeMode.dark;
+  ThemeMode get themeDataGet =>
+      getThemeDataFromBox() ? ThemeMode.dark : ThemeMode.light;
 
-
-  void changesTheme(){
-    Get.changeThemeMode(getTheme() ?ThemeMode.light : ThemeMode.dark);
-    saveTheme(!getTheme());
-    // Get.isDarkMode ?
-    // Get.changeThemeMode(ThemeMode.light):
-    // Get.changeThemeMode(ThemeMode.dark);
+  void changesTheme() {
+    Get.changeThemeMode(
+        getThemeDataFromBox() ? ThemeMode.light : ThemeMode.dark);
+    saveThemeDataInBox(!getThemeDataFromBox());
   }
 }

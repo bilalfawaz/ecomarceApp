@@ -163,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: args[0] == "2"
                                 ? 'Already have an account? '
                                 : "Don't have account? ",
-                            color:!Get.isDarkMode?  Colors.white : Colors.black,
+                            color:Get.isDarkMode ? mainColor : pinkClr,
                             underLine: TextDecoration.none),
                         TextButton(
                           onPressed: (){
