@@ -17,25 +17,25 @@ class CheckBoxWidget extends StatelessWidget {
     return Row(
       children: [
         Theme(
-          data: ThemeData(unselectedWidgetColor: Get.isDarkMode ? Colors.black : Colors.white,),
+          data: ThemeData(unselectedWidgetColor: Get.isDarkMode ? Colors.white : Colors.black,),
           child: Checkbox(
             value: value,
             onChanged: (value) => onChange(value),
-            checkColor: Get.isDarkMode ? Colors.green : Colors.white,
-            activeColor:Get.isDarkMode ? Colors.grey.shade200 : pinkClr,
+            checkColor: Get.isDarkMode ? Colors.white : Colors.green,
+            activeColor:Get.isDarkMode ? pinkClr : Colors.grey.shade200,
           ),
         ),
         TextUtils(
             fontSize: 16,
             fontWeight: FontWeight.normal,
             text: firstText,
-            color: Get.isDarkMode ? Colors.black :Colors.white,
+            color: Get.isDarkMode ? Colors.white :Colors.black,
             underLine: TextDecoration.none),
          TextUtils(
             fontSize: 16,
             fontWeight: FontWeight.normal,
             text: secondText,
-            color: Get.isDarkMode ? Colors.black :Colors.white,
+            color: Get.isDarkMode ? Colors.white :Colors.black,
             underLine: secondTextDecoration)
       ],
     );

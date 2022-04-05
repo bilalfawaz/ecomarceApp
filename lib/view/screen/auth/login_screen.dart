@@ -39,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: mode,
+      backgroundColor: context.theme.backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
             child: Column(
@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 28,
                             fontWeight: FontWeight.w500,
                             text: args[0] == "2" ? "SIGN" : 'LOG',
-                            color: Get.isDarkMode ? mainColor : pinkClr,
+                            color: Get.isDarkMode ? pinkClr : mainColor,
                             underLine: TextDecoration.none),
                         const SizedBox(
                           width: 3,
@@ -65,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             fontSize: 28,
                             fontWeight: FontWeight.w500,
                             text: args[0] == "2" ? "UP" : "IN",
-                            color: Get.isDarkMode ? Colors.black : Colors.white,
+                            color: Get.isDarkMode ? Colors.white : Colors.black,
                             underLine: TextDecoration.none),
                       ],
                     ),
@@ -80,7 +80,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ? AuthTextFromField(
                                     hintText: "UserName",
                                     suffixIcon: const Text(""),
-                                    prefixIcon: !Get.isDarkMode
+                                    prefixIcon: Get.isDarkMode
                                         ? const Icon(
                                       Icons.person,
                                       color: pinkClr,
@@ -101,7 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             AuthTextFromField(
                                 hintText: "Email",
                                 suffixIcon: const Text(""),
-                                prefixIcon: !Get.isDarkMode
+                                prefixIcon: Get.isDarkMode
                                     ? const Icon(
                                   Icons.email,
                                   color: pinkClr,
@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               obscureText: true,
                               hintText: "PassWord",
                               suffixIcon: const Text(""),
-                              prefixIcon: !Get.isDarkMode
+                              prefixIcon: Get.isDarkMode
                                   ?const Icon(
                                 Icons.lock,
                                 color: pinkClr,
@@ -163,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             text: args[0] == "2"
                                 ? 'Already have an account? '
                                 : "Don't have account? ",
-                            color:Get.isDarkMode ? mainColor : pinkClr,
+                            color:Get.isDarkMode ? pinkClr : mainColor,
                             underLine: TextDecoration.none),
                         TextButton(
                           onPressed: (){
@@ -182,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child:  TextUtils( fontSize: 16,
                               fontWeight: FontWeight.normal,
                               text: args[0] == "2" ? "Log In" : "SignUp",
-                              color: !Get.isDarkMode?  Colors.white : Colors.black,
+                              color: Get.isDarkMode?  Colors.white : Colors.black,
                               underLine: TextDecoration.underline),
                         ),
                       ],
