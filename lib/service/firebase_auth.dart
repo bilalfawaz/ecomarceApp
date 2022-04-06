@@ -1,15 +1,22 @@
+import 'package:ecomarceapp/utils/route/route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 
 class FireAuth{
+  static FirebaseAuth auth = FirebaseAuth.instance;
+  static bool isSignedIn = false;
+  static final GetStorage authBox = GetStorage();
+  static String authValue ="auth";
+
   static Future<User?> registerUsingEmailPassword({
     required String email,
     required String password,
     required String username,
   }) async {
-    var auth = FirebaseAuth.instance;
     User? user;
     try {
       UserCredential userCredential = await auth.createUserWithEmailAndPassword(
@@ -35,7 +42,7 @@ class FireAuth{
     required String password,
     required BuildContext context,
   }) async {
-    FirebaseAuth auth = FirebaseAuth.instance;
+
     User? user;
 
     try {
@@ -43,6 +50,10 @@ class FireAuth{
         email: email,
         password: password,
       );
+
+      isSignedIn = true;
+      authBox.write(authValue, isSignedIn);
+      print(isSignedIn);
       user = userCredential.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -58,7 +69,6 @@ class FireAuth{
   }
 
   static Future<User?> signInWithGoogle({required BuildContext context}) async {
-    FirebaseAuth auth = FirebaseAuth.instance;
     User? user;
 
     final GoogleSignIn googleSignIn = GoogleSignIn();
@@ -78,7 +88,8 @@ class FireAuth{
       try {
         final UserCredential userCredential =
         await auth.signInWithCredential(credential);
-
+        isSignedIn = true;
+        authBox.write(authValue, isSignedIn);
         user = userCredential.user;
       } on FirebaseAuthException catch (e) {
         if (e.code == 'account-exists-with-different-credential') {
@@ -109,6 +120,9 @@ class FireAuth{
         await googleSignIn.signOut();
       }
       await FirebaseAuth.instance.signOut();
+      Get.offNamed(Routes.welcomeScreen);
+      isSignedIn = false;
+      authBox.remove(authValue);
     } catch (e) {
       _showErrorDialog("Error signing out. Try again.", context);
     }

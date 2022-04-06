@@ -9,7 +9,7 @@ class AppRoutes {
   //initialRoute
 
   static const welcome = Routes.welcomeScreen;
-  static const mainSreen = Routes.mainScreen;
+  static const mainScreen = Routes.mainScreen;
   //getPages
 
   static final routes = [

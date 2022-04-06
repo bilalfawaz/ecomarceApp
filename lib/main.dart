@@ -3,6 +3,7 @@ import 'package:ecomarceapp/utils/route/route.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:ecomarceapp/view/screen/main_page.dart';
 import 'package:ecomarceapp/view/screen/welcome_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -33,7 +35,10 @@ class _MyAppState extends State<MyApp> {
       themeMode: ThemeController().themeDataGet,
       darkTheme: ThemesApp.dark,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.welcomeScreen,
+      initialRoute: FirebaseAuth.instance.currentUser != null ||
+              GetStorage().read<bool>("auth") == true
+          ? AppRoutes.mainScreen
+          : AppRoutes.welcome,
       getPages: AppRoutes.routes,
     );
   }
