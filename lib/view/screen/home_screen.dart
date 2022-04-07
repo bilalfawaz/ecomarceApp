@@ -32,17 +32,17 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    TextUtils(
+                    const TextUtils(
                         fontSize: 18,
                         fontWeight: FontWeight.normal,
                         text: "Find Your",
-                        color: Get.isDarkMode ? Colors.white : Colors.black,
+                        color: Colors.white ,
                         underLine: TextDecoration.none),
                     TextUtils(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         text: "INSPIRATION",
-                        color: Get.isDarkMode ? Colors.white : Colors.black,
+                        color: Colors.white ,
                         underLine: TextDecoration.none),
                     SizedBox(height: MediaQuery.of(context).size.height*0.05,),
                     const SearchTextHome(),
