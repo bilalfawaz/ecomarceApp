@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BuildCartItems extends StatelessWidget {
-  BuildCartItems({Key? key,this.textColor}) : super(key: key);
+  BuildCartItems({Key? key,this.textColor,this.image,this.price,this.rate}) : super(key: key);
   Color? textColor;
+  String? image;
+  double? price,rate;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -36,8 +38,8 @@ class BuildCartItems extends StatelessWidget {
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
               child: Image.network(
-                "https://images.unsplash.com/photo-1649314185443-ef480f172000?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80",
-                fit: BoxFit.fitWidth,
+                image!,
+                fit: BoxFit.fitHeight,
               ),
             ),
             Padding(
@@ -48,7 +50,7 @@ class BuildCartItems extends StatelessWidget {
                   TextUtils(
                       fontSize: 14,
                       fontWeight: FontWeight.normal,
-                      text: "\$ 15",
+                      text: "\$ $price",
                       color: textColor!,
                       underLine: TextDecoration.none),
                   Container(
@@ -56,14 +58,14 @@ class BuildCartItems extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 3,right: 2),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           TextUtils(
                               fontSize: 13,
                               fontWeight: FontWeight.bold,
-                              text: "4.7",
+                              text: "${rate!}",
                               color: Colors.white,
                               underLine: TextDecoration.none),
-                          Icon(Icons.star,size: 13,color: Colors.white,)
+                          const Icon(Icons.star,size: 13,color: Colors.white,)
                         ],
                       ),
                     ),
@@ -80,7 +82,7 @@ class BuildCartItems extends StatelessWidget {
           ],
         ),
         decoration:
-            BoxDecoration(borderRadius: BorderRadius.circular(15), boxShadow: [
+            BoxDecoration(color: Colors.white,borderRadius: BorderRadius.circular(15), boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
             spreadRadius: 3,

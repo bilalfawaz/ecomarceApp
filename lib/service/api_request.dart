@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:ecomarceapp/model/product.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../model/product_models.dart';
 
 part 'api_request.g.dart';
 
@@ -10,5 +11,5 @@ abstract class ApiRequest {
 
 
   @GET("/products")
-  Future<Product> getAllData();
+  Future<ProductModels> getAllData();
 }

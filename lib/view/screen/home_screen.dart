@@ -63,7 +63,7 @@ class HomeScreen extends StatelessWidget {
                       underLine: TextDecoration.none)),
             ),
             SizedBox(height: MediaQuery.of(context).size.height*0.03,),
-            CardItemsHome(textColor: Get.isDarkMode ? Colors.white : Colors.black,),
+            CardItemsHome(textColor:  Colors.black,),
           ],
         ),
       ),

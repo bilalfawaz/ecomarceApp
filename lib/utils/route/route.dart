@@ -1,4 +1,5 @@
 import 'package:ecomarceapp/logic/binding/main_binding.dart';
+import 'package:ecomarceapp/logic/binding/product_binding.dart';
 import 'package:ecomarceapp/view/screen/main_page.dart';
 import 'package:ecomarceapp/view/screen/welcome_page.dart';
 import 'package:get/get.dart';
@@ -25,7 +26,10 @@ class AppRoutes {
     GetPage(
       name: Routes.mainScreen,
       page: () => const MainPage(),
-      binding: MainBinding(),
+      bindings: [
+        MainBinding(),
+        ProductBinding(),
+      ],
     ),
     // GetPage(
     //   name: Routes.forgotPasswordScreen,

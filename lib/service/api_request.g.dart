@@ -16,18 +16,18 @@ class _ApiRequest implements ApiRequest {
   String? baseUrl;
 
   @override
-  Future<Product> getAllData() async {
+  Future<ProductModels> getAllData() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<Product>(
+        _setStreamType<ProductModels>(
             Options(method: 'GET', headers: _headers, extra: _extra)
                 .compose(_dio.options, '/products',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = Product.fromJson(_result.data!);
+    final value = ProductModels.fromJson(_result.data!);
     return value;
   }
 
