@@ -1,8 +1,7 @@
 import 'package:ecomarceapp/logic/controller/theme_controller.dart';
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/utils/route/route.dart';
 import 'package:ecomarceapp/utils/themes.dart';
-import 'package:ecomarceapp/view/screen/main_page.dart';
-import 'package:ecomarceapp/view/screen/welcome_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemesApp.dark,
       debugShowCheckedModeBanner: false,
       initialRoute: FirebaseAuth.instance.currentUser != null ||
-              GetStorage().read<bool>("auth") == true
+              GetStorage().read<bool>(authValue) == true
           ? AppRoutes.mainScreen
           : AppRoutes.welcome,
       getPages: AppRoutes.routes,

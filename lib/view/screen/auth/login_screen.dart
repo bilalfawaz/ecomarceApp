@@ -6,13 +6,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_instance/get_instance.dart';
 
 import '../../../service/firebase_auth.dart';
 import '../../../utils/my_string.dart';
 import '../../../utils/route/route.dart';
 import '../../widget/auth_text_from_field.dart';
-import '../../widget/container_button_widget.dart';
 import '../../widget/elevated_button_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -32,7 +30,9 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   bool checkBoxValue = false;
 
+  ///Unused
   Color mode = Get.isDarkMode ? Colors.white : darkGreyClr;
+
   var args = Get.arguments;
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
 
@@ -220,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 password: passControllerLogin.text,
                                 context: context);
                             if (user != null) {
-                              print("aaa");
+                              //print("aaa");
                               Get.offNamed(Routes.mainScreen,arguments: [user.uid]);
                             }
                           }

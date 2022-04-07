@@ -4,7 +4,6 @@ import 'package:ecomarceapp/view/screen/catogory_screen.dart';
 import 'package:ecomarceapp/view/screen/favorite_screen.dart';
 import 'package:ecomarceapp/view/screen/home_screen.dart';
 import 'package:ecomarceapp/view/screen/setting_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController{
@@ -13,8 +12,8 @@ class MainController extends GetxController{
 
   final taps = [
     HomeScreen(),
-    CatogoryScreen(),
-    FavoriteScreen(),
+    const CatogoryScreen(),
+    const FavoriteScreen(),
     SettingScreen(),
   ].obs;
 

@@ -1,15 +1,8 @@
-import 'dart:convert';
 
-import 'package:dio/dio.dart';
 import 'package:ecomarceapp/logic/controller/main_controller.dart';
-import 'package:ecomarceapp/model/product.dart';
-import 'package:ecomarceapp/service/api_request.dart';
-import 'package:ecomarceapp/service/firebase_database.dart';
 import 'package:ecomarceapp/utils/themes.dart';
-import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

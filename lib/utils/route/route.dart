@@ -24,7 +24,7 @@ class AppRoutes {
     ),
     GetPage(
       name: Routes.mainScreen,
-      page: () => MainPage(),
+      page: () => const MainPage(),
       binding: MainBinding(),
     ),
     // GetPage(

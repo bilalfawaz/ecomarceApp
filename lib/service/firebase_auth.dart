@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/utils/route/route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ class FireAuth{
   static FirebaseAuth auth = FirebaseAuth.instance;
   static bool isSignedIn = false;
   static final GetStorage authBox = GetStorage();
-  static String authValue ="auth";
 
   static Future<User?> registerUsingEmailPassword({
     required String email,
