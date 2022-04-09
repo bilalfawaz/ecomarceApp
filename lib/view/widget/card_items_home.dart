@@ -30,11 +30,16 @@ class CardItemsHome extends StatelessWidget {
                 maxCrossAxisExtent: 200
             ),
             itemBuilder: (BuildContext context, int index) {
-              return BuildCartItems(
-                rate: controller.productList[index].rating.rate,
-                price: controller.productList[index].price,
-                image: controller.productList[index].image,
-                textColor: textColor,
+              return InkWell(
+                onTap: (){
+                  print(controller.productList[index].title);
+                },
+                child: BuildCartItems(
+                  rate: controller.productList[index].rating.rate,
+                  price: controller.productList[index].price,
+                  image: controller.productList[index].image,
+                  textColor: textColor,
+                ),
               );
             },
           ),
