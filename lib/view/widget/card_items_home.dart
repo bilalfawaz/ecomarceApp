@@ -23,7 +23,7 @@ class CardItemsHome extends StatelessWidget {
         return Expanded(
           child: GridView.builder(
             itemCount: controller.productList.length,
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 childAspectRatio: 0.8,
                 mainAxisSpacing: 9.0,
                 crossAxisSpacing: 6,
@@ -39,6 +39,7 @@ class CardItemsHome extends StatelessWidget {
                   price: controller.productList[index].price,
                   image: controller.productList[index].image,
                   textColor: textColor,
+                  id: controller.productList[index].id,
                 ),
               );
             },

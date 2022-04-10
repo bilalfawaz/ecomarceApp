@@ -13,7 +13,7 @@ class MainController extends GetxController{
   final taps = [
     HomeScreen(),
     const CatogoryScreen(),
-    const FavoriteScreen(),
+    FavoriteScreen(),
     SettingScreen(),
   ].obs;
 

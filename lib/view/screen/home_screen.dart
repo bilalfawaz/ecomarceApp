@@ -38,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                         text: "Find Your",
                         color: Colors.white ,
                         underLine: TextDecoration.none),
-                    TextUtils(
+                    const TextUtils(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                         text: "INSPIRATION",

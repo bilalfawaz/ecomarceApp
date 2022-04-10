@@ -1,13 +1,16 @@
+import 'package:ecomarceapp/logic/controller/product_controller.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BuildCartItems extends StatelessWidget {
-  BuildCartItems({Key? key,this.textColor,this.image,this.price,this.rate}) : super(key: key);
+  BuildCartItems({Key? key,this.textColor,this.image,this.price,this.rate,required this.id}) : super(key: key);
   Color? textColor;
   String? image;
   double? price,rate;
+  int id;
+  var controller = Get.find<ProductController>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,15 +18,22 @@ class BuildCartItems extends StatelessWidget {
       child: Container(
         child: Column(
           children: [
-            Row(
+          Obx((){
+            return Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.favorite_outline,
-                      color: textColor
-                    )),
+                    onPressed: () {
+                      controller.manageFavorite(id);
+                    },
+                    icon: controller.addFavoriteProduct(id) ?
+                    const Icon(
+                        Icons.favorite,
+                        color: Colors.red
+                    ) : Icon(
+                    Icons.favorite_outline,
+                    color: textColor
+                )),
                 IconButton(
                     onPressed: () {},
                     icon: Icon(
@@ -31,7 +41,8 @@ class BuildCartItems extends StatelessWidget {
                       color: textColor,
                     ))
               ],
-            ),
+            );
+          }),
             Container(
               width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.17,
