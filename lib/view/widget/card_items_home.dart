@@ -40,6 +40,7 @@ class CardItemsHome extends StatelessWidget {
                   image: controller.productList[index].image,
                   textColor: textColor,
                   id: controller.productList[index].id,
+                  productModels: controller.productList[index],
                 ),
               );
             },

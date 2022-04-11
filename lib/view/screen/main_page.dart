@@ -1,5 +1,8 @@
 
+import 'package:badges/badges.dart';
+import 'package:ecomarceapp/logic/controller/cart_controller.dart';
 import 'package:ecomarceapp/logic/controller/main_controller.dart';
+import 'package:ecomarceapp/utils/route/route.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,6 +18,7 @@ class _MainPageState extends State<MainPage> {
   /// to get a data from previous page
   var arg = Get.arguments;
   final controller = Get.find<MainController>();
+  final cartController = Get.find<CartController>();
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +33,24 @@ class _MainPageState extends State<MainPage> {
             title: Text(controller.title[controller.currentIndex.value]),
             backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
             actions: [
-              IconButton(
-                  onPressed: () {
-                  }, icon: Image.asset('assets/images/shop.png')),
-            ],
+              Obx((){
+                return  Badge(
+                    position: BadgePosition.topEnd(top: 0, end: 3),
+                    animationDuration: Duration(milliseconds: 300),
+                    animationType: BadgeAnimationType.slide,
+                    badgeContent:  Text(
+                      "${cartController.countProduct()}",
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    child: IconButton(
+                        icon:Image.asset('assets/images/shop.png'), onPressed: () {Get.toNamed(Routes.cartScreen);}));
+              }),
+              // IconButton(
+              //     onPressed: () {
+              //       Get.toNamed(Routes.cartScreen);
+              //     },
+              //     icon: Image.asset('assets/images/shop.png')),
+              ],
           ),
           bottomNavigationBar: BottomNavigationBar(
             backgroundColor: Get.isDarkMode ? darkGreyClr : Colors.white ,

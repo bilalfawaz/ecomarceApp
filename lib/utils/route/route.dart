@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/logic/binding/auth_binding.dart';
 import 'package:ecomarceapp/logic/binding/main_binding.dart';
 import 'package:ecomarceapp/logic/binding/product_binding.dart';
 import 'package:ecomarceapp/view/screen/main_page.dart';
@@ -5,6 +6,7 @@ import 'package:ecomarceapp/view/screen/welcome_page.dart';
 import 'package:get/get.dart';
 
 import '../../view/screen/auth/login_screen.dart';
+import '../../view/screen/cart/cart_screen.dart';
 
 class AppRoutes {
   //initialRoute
@@ -45,14 +47,14 @@ class AppRoutes {
     //     ProductBinding(),
     //   ],
     // ),
-    // GetPage(
-    //   name: Routes.cartScreen,
-    //   page: () => CartScreen(),
-    //   bindings: [
-    //     AuthBinding(),
-    //     ProductBinding(),
-    //   ],
-    // ),
+    GetPage(
+      name: Routes.cartScreen,
+      page: () => CartScreen(),
+      bindings: [
+        ProductBinding(),
+        AuthBinding(),
+      ],
+    ),
     // GetPage(
     //   name: Routes.paymentScreen,
     //   page: () => PayMentScreen(),

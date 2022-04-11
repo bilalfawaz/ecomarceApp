@@ -1,16 +1,20 @@
+import 'package:ecomarceapp/logic/controller/cart_controller.dart';
 import 'package:ecomarceapp/logic/controller/product_controller.dart';
+import 'package:ecomarceapp/model/product_models.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class BuildCartItems extends StatelessWidget {
-  BuildCartItems({Key? key,this.textColor,this.image,this.price,this.rate,required this.id}) : super(key: key);
+  BuildCartItems({Key? key,this.textColor,this.image,this.price,this.rate,required this.id,required this.productModels}) : super(key: key);
   Color? textColor;
   String? image;
   double? price,rate;
   int id;
+  ProductModels? productModels;
   var controller = Get.find<ProductController>();
+  var cartController = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -35,7 +39,9 @@ class BuildCartItems extends StatelessWidget {
                     color: textColor
                 )),
                 IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      cartController.addProduct(productModels!);
+                    },
                     icon: Icon(
                       Icons.add,
                       color: textColor,
