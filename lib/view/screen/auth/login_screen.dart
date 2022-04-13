@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import '../../../service/firebase_auth.dart';
 import '../../../utils/my_string.dart';
 import '../../../utils/route/route.dart';
-import '../../widget/auth_text_from_field.dart';
+import '../../widget/auth_widget/auth_text_from_field.dart';
 import '../../widget/elevated_button_widget.dart';
 
 class LoginScreen extends StatefulWidget {

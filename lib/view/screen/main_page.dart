@@ -45,11 +45,6 @@ class _MainPageState extends State<MainPage> {
                     child: IconButton(
                         icon:Image.asset('assets/images/shop.png'), onPressed: () {Get.toNamed(Routes.cartScreen);}));
               }),
-              // IconButton(
-              //     onPressed: () {
-              //       Get.toNamed(Routes.cartScreen);
-              //     },
-              //     icon: Image.asset('assets/images/shop.png')),
               ],
           ),
           bottomNavigationBar: BottomNavigationBar(

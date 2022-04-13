@@ -1,8 +1,10 @@
 import 'package:ecomarceapp/logic/controller/product_controller.dart';
 import 'package:ecomarceapp/utils/themes.dart';
+import 'package:ecomarceapp/view/screen/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/route/route.dart';
 import 'build_cart_items.dart';
 
 
@@ -32,7 +34,7 @@ class CardItemsHome extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return InkWell(
                 onTap: (){
-                  print(controller.productList[index].title);
+                  Get.to(()=> ProductDetailsScreen(productModels: controller.productList[index],));
                 },
                 child: BuildCartItems(
                   rate: controller.productList[index].rating.rate,

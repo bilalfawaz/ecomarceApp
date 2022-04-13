@@ -47,6 +47,11 @@ dependencies:
   json_annotation: ^4.4.0
   json_serializable: ^6.1.1
   badges: ^2.0.2
+  smooth_page_indicator: ^1.0.0+2
+  carousel_slider: ^4.0.0
+  flutter_rating_bar: ^4.0.0
+  readmore: any
+
 
 
 

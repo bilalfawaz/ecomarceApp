@@ -1,10 +1,10 @@
-import 'package:ecomarceapp/view/widget/card_items_home.dart';
+import 'package:ecomarceapp/view/widget/cart_widget/card_items_home.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../utils/themes.dart';
-import '../widget/auth_text_from_field.dart';
+import '../widget/auth_widget/auth_text_from_field.dart';
 import '../widget/searhc_text_home.dart';
 
 class HomeScreen extends StatelessWidget {
