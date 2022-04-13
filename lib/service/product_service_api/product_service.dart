@@ -1,7 +1,7 @@
 import 'package:ecomarceapp/model/product_models.dart';
 import 'package:http/http.dart' as http;
 
-import '../utils/my_string.dart';
+import '../../utils/my_string.dart';
 
 
 class ProductService{

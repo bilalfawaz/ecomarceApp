@@ -1,5 +1,5 @@
 import 'package:ecomarceapp/model/product_models.dart';
-import 'package:ecomarceapp/service/product_service.dart';
+import 'package:ecomarceapp/service/product_service_api/product_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
