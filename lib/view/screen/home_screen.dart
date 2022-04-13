@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../../utils/themes.dart';
 import '../widget/auth_widget/auth_text_from_field.dart';
-import '../widget/searhc_text_home.dart';
+import '../widget/search_text_home.dart';
 
 class HomeScreen extends StatelessWidget {
    HomeScreen({Key? key}) : super(key: key);
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.white ,
                         underLine: TextDecoration.none),
                     SizedBox(height: MediaQuery.of(context).size.height*0.05,),
-                    const SearchTextHome(),
+                    SearchTextHome(),
                   ],
                 ),
               ),
