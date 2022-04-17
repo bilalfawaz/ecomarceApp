@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/view/widget/cart_widget/card_items_home.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: context.theme.backgroundColor,
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: double.infinity,
@@ -32,19 +34,19 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const TextUtils(
+                    TextUtils(
                         fontSize: 18,
                         fontWeight: FontWeight.normal,
-                        text: "Find Your",
+                        text: findYour.tr,
                         color: Colors.white ,
                         underLine: TextDecoration.none),
-                    const TextUtils(
+                    TextUtils(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        text: "INSPIRATION",
+                        text: inspiration.tr,
                         color: Colors.white ,
                         underLine: TextDecoration.none),
-                    SizedBox(height: MediaQuery.of(context).size.height*0.05,),
+                    SizedBox(height: MediaQuery.of(context).size.height*0.025,),
                     SearchTextHome(),
                   ],
                 ),
@@ -53,14 +55,12 @@ class HomeScreen extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height*0.02,),
             Padding(
               padding: const EdgeInsets.only(left: 18.0),
-              child: Align(
-                  alignment: Alignment.topLeft,
-                  child: TextUtils(
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
-                      text: "Categories",
-                      color: Get.isDarkMode ? Colors.white : Colors.black,
-                      underLine: TextDecoration.none)),
+              child: TextUtils(
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                  text: category.tr,
+                  color: Get.isDarkMode ? Colors.white : Colors.black,
+                  underLine: TextDecoration.none),
             ),
             SizedBox(height: MediaQuery.of(context).size.height*0.03,),
             CardItemsHome(textColor:  Colors.black,),

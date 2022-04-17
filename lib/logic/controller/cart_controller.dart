@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 
 class CartController extends GetxController {
   var productMap = {}.obs;
-  get productSubTotal => productMap.entries.map((e) => e.key.price * e.value).toList();
+  get productSubTotal => productMap.entries.map((e) => e.key.priceValie * e.value).toList();
   get total =>productMap.entries
-      .map((e) => e.key.price * e.value)
+      .map((e) => e.key.priceValie * e.value)
       .toList()
       .reduce((value, element) => value + element)
       .toStringAsFixed(2);

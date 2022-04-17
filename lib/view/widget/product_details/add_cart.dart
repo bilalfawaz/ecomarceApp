@@ -1,5 +1,6 @@
 import 'package:ecomarceapp/logic/controller/cart_controller.dart';
 import 'package:ecomarceapp/logic/controller/product_controller.dart';
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,10 +9,10 @@ import '../../../utils/themes.dart';
 import '../text_utils.dart';
 
 class AddCart extends StatelessWidget {
-  AddCart({Key? key, required this.price, required this.productModels})
+  AddCart({Key? key, required this.priceValie, required this.productModels})
       : super(key: key);
 
-  double price;
+  double priceValie;
   var cartController = Get.find<CartController>();
   ProductModels productModels;
 
@@ -27,14 +28,14 @@ class AddCart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextUtils(
+              TextUtils(
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
-                  text: "Price",
+                  text: price.tr,
                   color: Colors.grey,
                   underLine: TextDecoration.none),
               Text(
-                "$price",
+                "$priceValie",
                 style: TextStyle(
                     color: Get.isDarkMode ? Colors.white : Colors.black,
                     fontSize: 20,
@@ -60,12 +61,12 @@ class AddCart extends StatelessWidget {
                       },
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: const [
+                        children: [
                           Text(
-                            "Add To Cart",
-                            style: TextStyle(fontSize: 20),
+                            addToCart.tr,
+                            style: const TextStyle(fontSize: 20),
                           ),
-                          Icon(Icons.shopping_cart)
+                          const Icon(Icons.shopping_cart)
                         ],
                       ))))
         ],

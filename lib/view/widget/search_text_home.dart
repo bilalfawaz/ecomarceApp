@@ -3,6 +3,8 @@ import 'package:ecomarceapp/utils/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../utils/my_string.dart';
+
 class SearchTextHome extends StatelessWidget {
   SearchTextHome({Key? key}) : super(key: key);
   var productController = Get.find<ProductController>();
@@ -21,7 +23,7 @@ class SearchTextHome extends StatelessWidget {
           cursorColor: Colors.black,
           keyboardType: TextInputType.text,
           decoration: InputDecoration(
-            hintText: "Search With Name And Price",
+            hintText: searchTextForm.tr,
             hintStyle: const TextStyle(
                 color: Colors.black45, fontSize: 16, fontWeight: FontWeight.w500),
             enabledBorder: OutlineInputBorder(

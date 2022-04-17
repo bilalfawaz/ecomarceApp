@@ -1,4 +1,5 @@
 import 'package:ecomarceapp/logic/controller/cart_controller.dart';
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,10 @@ class CartTotal extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const TextUtils(
+                TextUtils(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
-                    text: "Total",
+                    text: total.tr,
                     color: Colors.grey,
                     underLine: TextDecoration.none),
                 Text(
@@ -52,12 +53,12 @@ class CartTotal extends StatelessWidget {
                         onPressed: () {},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [
+                          children: [
                             Text(
-                              "Check Out",
+                             checkout.tr,
                               style: TextStyle(fontSize: 20),
                             ),
-                            Icon(Icons.shopping_cart)
+                            const Icon(Icons.shopping_cart)
                           ],
                         ))))
           ],

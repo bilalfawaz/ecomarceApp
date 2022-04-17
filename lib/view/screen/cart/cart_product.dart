@@ -74,8 +74,8 @@ class CartProduct extends StatelessWidget {
                         color: Get.isDarkMode ? Colors.white : Colors.black,
                       )),
                   Text(
-                    "${quantity}",
-                    style: TextStyle(
+                    "$quantity",
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 16,
                         overflow: TextOverflow.ellipsis),

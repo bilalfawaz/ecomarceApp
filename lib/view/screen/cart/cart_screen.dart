@@ -4,6 +4,7 @@ import 'package:ecomarceapp/view/screen/cart/empty_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/my_string.dart';
 import 'cart_product.dart';
 import 'cart_total.dart';
 
@@ -18,7 +19,7 @@ class CartScreen extends StatelessWidget {
         backgroundColor: context.theme.backgroundColor,
         appBar: AppBar(
           centerTitle: true,
-          title: const Text("Cart Items"),
+          title: Text(cartItems.tr),
           elevation: 0,
           backgroundColor: Get.isDarkMode ? darkGreyClr : mainColor,
           actions: [

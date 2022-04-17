@@ -1,4 +1,5 @@
 import 'package:ecomarceapp/logic/controller/product_controller.dart';
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
@@ -88,8 +89,8 @@ class CloseInfo extends StatelessWidget {
             textAlign: TextAlign.justify,
             colorClickableText:showLessText,
             trimMode: TrimMode.Line,
-            trimCollapsedText: 'Show more',
-            trimExpandedText: 'Show less',
+            trimCollapsedText: showMore.tr,
+            trimExpandedText: showLess.tr,
             style: TextStyle(color: textColor),
             moreStyle: showLessTextStyle,
           ),

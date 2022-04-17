@@ -72,7 +72,7 @@ class BuildCartItems extends StatelessWidget {
                       underLine: TextDecoration.none),
                   Container(
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 3,right: 2),
+                      padding: const EdgeInsets.only(left: 3,right: 3),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

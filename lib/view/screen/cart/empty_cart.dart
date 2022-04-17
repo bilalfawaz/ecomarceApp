@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/utils/route/route.dart';
 import 'package:ecomarceapp/utils/themes.dart';
 import 'package:flutter/material.dart';
@@ -22,19 +23,19 @@ class EmptyCart extends StatelessWidget {
           RichText(
               text: TextSpan(
                   children: [
-                    TextSpan(text: "Your Cart Is ",style: TextStyle(
+                    TextSpan(text:yourCartIs.tr,style: TextStyle(
                       color: Get.isDarkMode?Colors.white: Colors.black,
                       fontSize: 30,
                       fontWeight: FontWeight.bold
                     )),
-                    TextSpan(text: "Empty",style: TextStyle(
+                    TextSpan(text: empty.tr,style: TextStyle(
                         color: Get.isDarkMode? pinkClr: mainColor,
                         fontSize: 30,
                         fontWeight: FontWeight.bold
                     ))
               ])),
           const SizedBox(height: 10,),
-           Text("Add Item To Get Started",style: TextStyle(
+           Text(addItemsTo.tr,style: TextStyle(
               color: Get.isDarkMode?Colors.white: Colors.black,
               fontWeight: FontWeight.bold
           ),),
@@ -54,7 +55,7 @@ class EmptyCart extends StatelessWidget {
                     borderRadius: BorderRadius.circular(15),
                   )
                 ),
-                child: const Text("Go To Home",style: TextStyle(
+                child: Text(goToHome.tr,style: TextStyle(
                   fontSize: 20,
                 ),)
             ),

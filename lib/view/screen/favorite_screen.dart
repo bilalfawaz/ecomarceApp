@@ -1,4 +1,5 @@
 import 'package:ecomarceapp/logic/controller/product_controller.dart';
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,7 @@ class FavoriteScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20,),
                 Text(
-                  "Please, Add Your Favorite Product",
+                  favoriteProduct.tr,
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

@@ -81,6 +81,8 @@ PODS:
   - path_provider_ios (0.0.1):
     - Flutter
   - PromisesObjC (2.0.0)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
@@ -89,6 +91,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - google_sign_in (from `.symlinks/plugins/google_sign_in/ios`)
   - path_provider_ios (from `.symlinks/plugins/path_provider_ios/ios`)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
 
 SPEC REPOS:
   trunk:
@@ -120,6 +123,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/google_sign_in/ios"
   path_provider_ios:
     :path: ".symlinks/plugins/path_provider_ios/ios"
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
 
 SPEC CHECKSUMS:
   AppAuth: 80317d99ac7ff2801a2f18ff86b48cd315ed465d
@@ -142,6 +147,7 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   path_provider_ios: 14f3d2fd28c4fdb42f44e0f751d12861c43cee02
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
 
 PODFILE CHECKSUM: fe0e1ee7f3d1f7d00b11b474b62dd62134535aea
 

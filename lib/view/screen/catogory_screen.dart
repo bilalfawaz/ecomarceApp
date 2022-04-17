@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,18 +15,16 @@ class CatogoryScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.only(left: 15, top: 15),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Align(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 15, top: 15),
-                child: TextUtils(
-                  color: Get.isDarkMode ? Colors.white : Colors.black,
-                  text: 'Category',
-                  fontWeight: FontWeight.normal,
-                  fontSize: 30,
-                  underLine: TextDecoration.none,
-                ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15, top: 15),
+              child: TextUtils(
+                color: Get.isDarkMode ? Colors.white : Colors.black,
+                text: category.tr,
+                fontWeight: FontWeight.normal,
+                fontSize: 30,
+                underLine: TextDecoration.none,
               ),
             ),
             SizedBox(height: 20,),

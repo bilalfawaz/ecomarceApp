@@ -1,3 +1,4 @@
+import 'package:ecomarceapp/utils/my_string.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -40,11 +41,11 @@ class WelcomePage extends StatelessWidget {
                       color: Colors.black.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    child: const Center(
+                    child: Center(
                       child: TextUtils(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
-                        text: 'Welcome',
+                        text: welcome.tr,
                         color: Colors.white,
                         underLine: TextDecoration.none,
                       ),
@@ -101,10 +102,10 @@ class WelcomePage extends StatelessWidget {
                         "1"
                       ]);
                     },
-                    child: const TextUtils(
+                    child: TextUtils(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      text: 'Get Start',
+                      text:getStart.tr,
                       color: Colors.white,
                       underLine: TextDecoration.none,
                     ),
@@ -115,10 +116,10 @@ class WelcomePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const TextUtils(
+                       TextUtils(
                         fontSize: 18,
                         fontWeight: FontWeight.normal,
-                        text: "Don't have an Account?",
+                        text: donotHaveAcc.tr,
                         color: Colors.white,
                         underLine: TextDecoration.none,
                       ),
@@ -126,8 +127,8 @@ class WelcomePage extends StatelessWidget {
                         onPressed: () {
                           Get.offNamed(Routes.loginScreen,arguments: ["2"]);
                         },
-                        child: const TextUtils(
-                          text: 'Sign Up',
+                        child: TextUtils(
+                          text: signUp.tr,
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.normal,

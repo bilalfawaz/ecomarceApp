@@ -9,6 +9,8 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
+import 'logic/language/localiztion.dart';
+
 
 
 void main()async{
@@ -36,6 +38,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      locale: Locale(GetStorage().read<String>(langValue).toString()),
+      translations: LocalizationApp(),
+      fallbackLocale: Locale(ene),
       theme: ThemesApp.light,
       themeMode: ThemeController().themeDataGet,
       darkTheme: ThemesApp.dark,

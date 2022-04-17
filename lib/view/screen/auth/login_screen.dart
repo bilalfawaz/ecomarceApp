@@ -33,6 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
   ///Unused
   Color mode = Get.isDarkMode ? Colors.white : darkGreyClr;
 
+
   var args = Get.arguments;
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
 
@@ -55,17 +56,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextUtils(
                             fontSize: 28,
                             fontWeight: FontWeight.w500,
-                            text: args[0] == "2" ? "SIGN" : 'LOG',
+                            text: args[0] == "2" ? signUp.tr : login.tr,
                             color: Get.isDarkMode ? pinkClr : mainColor,
-                            underLine: TextDecoration.none),
-                        const SizedBox(
-                          width: 3,
-                        ),
-                        TextUtils(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w500,
-                            text: args[0] == "2" ? "UP" : "IN",
-                            color: Get.isDarkMode ? Colors.white : Colors.black,
                             underLine: TextDecoration.none),
                       ],
                     ),
@@ -78,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           children: [
                             args[0] == "2"
                                 ? AuthTextFromField(
-                                    hintText: "UserName",
+                                    hintText: userName.tr,
                                     suffixIcon: const Text(""),
                                     prefixIcon: Get.isDarkMode
                                         ? const Icon(
@@ -99,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 20,
                             ),
                             AuthTextFromField(
-                                hintText: "Email",
+                                hintText: email.tr,
                                 suffixIcon: const Text(""),
                                 prefixIcon: Get.isDarkMode
                                     ? const Icon(
@@ -119,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             AuthTextFromField(
                               obscureText: true,
-                              hintText: "PassWord",
+                              hintText: password.tr,
                               suffixIcon: const Text(""),
                               prefixIcon: Get.isDarkMode
                                   ?const Icon(
@@ -145,8 +137,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         secondTextDecoration: args[0] == "2"
                             ? TextDecoration.underline
                             : TextDecoration.none,
-                        firstText: args[0] == "2" ? "I Accept " : "Remember ",
-                        secondText: args[0] == "2" ? "terms & condition" : "me",
+                        firstText: args[0] == "2" ? iAccept.tr : remember.tr,
+                        secondText: args[0] == "2" ? termsAndConditions.tr : "",
                         value: checkBoxValue,
                         onChange: (value) {
                           setState(() {
@@ -161,8 +153,8 @@ class _LoginScreenState extends State<LoginScreen> {
                          TextUtils( fontSize: 16,
                             fontWeight: FontWeight.normal,
                             text: args[0] == "2"
-                                ? 'Already have an account? '
-                                : "Don't have account? ",
+                                ? alreadyHaveAcc.tr
+                                : donotHaveAcc.tr,
                             color:Get.isDarkMode ? pinkClr : mainColor,
                             underLine: TextDecoration.none),
                         TextButton(
@@ -181,7 +173,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                           child:  TextUtils( fontSize: 16,
                               fontWeight: FontWeight.normal,
-                              text: args[0] == "2" ? "Log In" : "SignUp",
+                              text: args[0] == "2" ? login.tr : signUp.tr,
                               color: Get.isDarkMode?  Colors.white : Colors.black,
                               underLine: TextDecoration.underline),
                         ),
@@ -204,7 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                             if (user != null) {
                               FireDatabase.addData(nameController.text, user.uid, emailController.text);
-                              _showErrorDialog("Create Email Done");
+                              _showErrorDialog(dialogDone.tr);
                               setState(() {
                                 emailController.text = "";
                                 passController.text = "";
@@ -228,14 +220,14 @@ class _LoginScreenState extends State<LoginScreen> {
                             if(args[0] == "2" && checkBoxValue != true && GetPlatform.isAndroid){
                               showDialog(context: context, builder: (context){
                                 return  AlertDialog(
-                                  title: const Text("Warning",style: TextStyle(color: Colors.red),),
-                                  content: const Text("Please Accept Terms and Conditions"),
+                                  title: Text(warning.tr,style: const TextStyle(color: Colors.red),),
+                                  content: Text(acceptCondition.tr),
                                   actions: [
                                     TextButton(
                                         onPressed: () {
                                           Get.back();
                                         },
-                                        child: const Text("Ok"))
+                                        child: Text(ok.tr))
                                   ],
                                 );
                               });
@@ -244,12 +236,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                   context: context,
                                   builder: (BuildContext context){
                                     return  CupertinoAlertDialog(
-                                      title: const Text("Warning",style: TextStyle(color: Colors.red),),
-                                      content: const Text(
-                                          'Please Accept Terms and Conditions'),
+                                      title: Text(warning.tr,style: const TextStyle(color: Colors.red),),
+                                      content:  Text(
+                                          acceptCondition.tr),
                                       actions: <CupertinoDialogAction>[
                                         CupertinoDialogAction(
-                                          child: const Text('No'),
+                                          child: Text(no.tr),
                                           onPressed: () {
                                             Get.back();
                                           },
@@ -261,7 +253,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                           }
                       },
-                      buttonText: args[0] == "2" ? "SignUp" : "Login",
+                      buttonText: args[0] == "2" ? signUp.tr : login.tr,
                     ),
                   ],
                 ),
