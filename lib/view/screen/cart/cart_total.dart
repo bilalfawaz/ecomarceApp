@@ -5,6 +5,8 @@ import 'package:ecomarceapp/view/widget/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/route/route.dart';
+
 class CartTotal extends StatelessWidget {
   CartTotal({Key? key}) : super(key: key);
 
@@ -50,7 +52,9 @@ class CartTotal extends StatelessWidget {
                             primary: Get.isDarkMode ? pinkClr : mainColor,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15))),
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(Routes.paymentScreen);
+                        },
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [

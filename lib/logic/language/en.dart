@@ -27,7 +27,7 @@ Map<String, String> en = {
   favoriteProduct : favoriteProduct,
   welcome : welcome,
   getStart : getStart,
-  price :price,
+  priceValue :priceValue,
   addToCart :addToCart,
   yourCartIs : yourCartIs,
   empty : empty,

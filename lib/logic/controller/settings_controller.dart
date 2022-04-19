@@ -27,7 +27,7 @@ class SettingController extends GetxController {
   }
 
   Future<String> get getLanguage async {
-    return await storage.read(langValue);
+    return await storage.read(langValue) ?? langLocal;
   }
 
   void changeLanguage(String typeLang) {

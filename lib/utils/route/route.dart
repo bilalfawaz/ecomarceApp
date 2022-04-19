@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 
 import '../../view/screen/auth/login_screen.dart';
 import '../../view/screen/cart/cart_screen.dart';
+import '../../view/screen/payment/payment_screen.dart';
 
 class AppRoutes {
   //initialRoute
@@ -55,15 +56,15 @@ class AppRoutes {
         AuthBinding(),
       ],
     ),
-    // GetPage(
-    //   name: Routes.paymentScreen,
-    //   page: () => PayMentScreen(),
-    //   bindings: [
-    //     AuthBinding(),
-    //     ProductBinding(),
-    //     MainBininding(),
-    //   ],
-    // ),
+    GetPage(
+      name: Routes.paymentScreen,
+      page: () => PaymentScreen(),
+      bindings: [
+        AuthBinding(),
+        ProductBinding(),
+        MainBinding(),
+      ],
+    ),
   ];
 }
 

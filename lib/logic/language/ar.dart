@@ -27,7 +27,7 @@ Map<String, String> ar = {
   favoriteProduct : "الرجاء اضافة منتج",
   welcome : "اهلا وسهلا",
   getStart : "استخدام",
-  price : "السعر",
+  priceValue : "السعر",
   addToCart :"اضافه الى السله",
   yourCartIs : "سلتك ",
   empty : "فارغه ",

@@ -28,7 +28,7 @@ class ProductDetailsScreen extends StatelessWidget {
                   rate: productModels.rating.rate,
                   description: productModels.description),
               const SizedList(),
-              AddCart(priceValie: productModels.price,productModels: productModels),
+              AddCart(price: productModels.price,productModels: productModels),
             ],
           ),
         ),

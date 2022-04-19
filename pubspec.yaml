@@ -52,6 +52,10 @@ dependencies:
   flutter_rating_bar: ^4.0.0
   readmore: any
   easy_localization: ^3.0.0
+  geolocator: ^7.6.0
+  geocoding: ^2.0.4
+
+
 
 
 

@@ -9,10 +9,10 @@ import '../../../utils/themes.dart';
 import '../text_utils.dart';
 
 class AddCart extends StatelessWidget {
-  AddCart({Key? key, required this.priceValie, required this.productModels})
+  AddCart({Key? key, required this.price, required this.productModels})
       : super(key: key);
 
-  double priceValie;
+  double price;
   var cartController = Get.find<CartController>();
   ProductModels productModels;
 
@@ -31,11 +31,11 @@ class AddCart extends StatelessWidget {
               TextUtils(
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
-                  text: price.tr,
+                  text: priceValue.tr,
                   color: Colors.grey,
                   underLine: TextDecoration.none),
               Text(
-                "$priceValie",
+                "$price",
                 style: TextStyle(
                     color: Get.isDarkMode ? Colors.white : Colors.black,
                     fontSize: 20,
